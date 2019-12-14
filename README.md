@@ -28,5 +28,6 @@ this will start a webserver listening on [http://localhost:8081/hello](http://lo
 TODOs
 -----
 
+- [ ] Add logging
 - [ ] Add consumer contract tests
 - [ ] Figure out how to make the Ginkgo tests more `GIVEN WHEN THEN` style 
