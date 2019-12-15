@@ -4,6 +4,9 @@ go 1.12
 
 require (
 	github.com/gavv/httpexpect/v2 v2.0.2
+	github.com/go-playground/ansi v2.1.0+incompatible // indirect
+	github.com/go-playground/errors v3.3.0+incompatible // indirect
+	github.com/go-playground/log v6.3.0+incompatible
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/onsi/ginkgo v1.10.3

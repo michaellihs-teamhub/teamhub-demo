@@ -1,6 +1,9 @@
 package services
 
-import "net/http"
+import (
+	"github.com/go-playground/log"
+	"net/http"
+)
 
 type HelloService interface {
 	Hello(http.ResponseWriter, *http.Request)
@@ -15,7 +18,8 @@ func NewService() HelloService {
 }
 
 func (s *helloService) Hello(w http.ResponseWriter, r *http.Request) {
+	log.Info("Processing request in helloService.Hello")
 	if _, err := w.Write([]byte("hello")); err != nil {
-		return
+		log.Error(err)
 	}
 }

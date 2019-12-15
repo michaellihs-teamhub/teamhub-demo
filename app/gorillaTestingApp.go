@@ -1,8 +1,9 @@
 package app
 
 import (
-	"github.com/michaellihs/gorilla-testing/services"
+	"github.com/go-playground/log"
 	"github.com/michaellihs/gorilla-testing/routing"
+	"github.com/michaellihs/gorilla-testing/services"
 	"net/http"
 )
 
@@ -15,10 +16,11 @@ func NewGorillaTestingApp(port string) *GorillaTestingApp {
 }
 
 func (a *GorillaTestingApp) Run() error {
+	log.Info("Starting GorillaTestingApp, listening on port ", a.port)
 	helloService := services.NewService()
 	router := routing.NewRouter(helloService)
 	if err := http.ListenAndServe(":" + a.port, router); err != nil {
-		return err
+		log.Error(err)
 	}
 	return nil
 }
